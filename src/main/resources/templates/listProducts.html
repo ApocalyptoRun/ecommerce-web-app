@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta charset="utf-8">
+<link th:href="@{/styles/products.css}" rel="stylesheet" />
+<title>Our Categories</title>
+</head>
+<body>
+		<div th:replace="navbar :: navbar" ></div>
+		<div class="container">
+		    <div class="row">
+		    	<div class="col-12 text-center">
+		    		<h3  class="pt-3">Our Products</h3>
+		    	</div>
+		    	<div>
+		    		<a href="#" th:href="@{/product/showFormAddProduct}" class="btn btn-secondary add" >Add a new Product</a>
+		    	</div>
+		    </div>
+		    <div class="row">
+				<div class="card" th:each="productDto : ${productDtos}">
+					  <div>
+					  	<img  style="height:200px" class="card-img-top" th:src="@{${'/images/'+productDto.imageURL+'.jpg'}}" alt="image">
+					  </div>
+					  <div class="card-body">
+					    <h5 class="card-title" th:text="${productDto.name}"></h5>
+					    <h6 class="card-subtitle mb-2 text-danger" th:text="${productDto.price + ' $'}"></h6>
+					    <p class="card-text" th:text="${productDto.description}"></p>
+					    <a href="#" th:href="@{/product/showFormEditProduct/{id}(id=${productDto.id})}" class="btn btn-primary">Edit</a>
+					 </div>
+				</div>			
+		    </div>
+	    </div>
+	    <div th:replace="footer :: footer" ></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>			    
+</body>
+</html>

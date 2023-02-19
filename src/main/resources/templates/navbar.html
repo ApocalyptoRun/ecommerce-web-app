@@ -1,0 +1,51 @@
+<div th:fragment="navbar">
+
+		<nav class="navbar navbar-expand-lg bg-dark text-white">
+		  <a class="navbar-brand text-warning ml-2" href="#" th:href="@{/product/ByCategory/{id}(id=${59})}">H<sup>2</sup>I<sup>2</sup></a>
+		  <form class="form-inline ml-5 w-75" >
+			    <input class="form-control mr-2 " style="width:650px;" type="search" placeholder="Search" aria-label="Search">
+			    <button class="btn btn-outline-warning  my-sm-0" type="submit">Search</button>
+		  </form>
+		  
+			<div class="dropdown">
+			  <a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+			    Browser
+			  </a>
+			
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			    <li><a class="dropdown-item" href="#" th:href="@{/product/ByCategory/{id}(id=${59})}">Home</a></li>
+			    <li><a class="dropdown-item" href="#">Product</a></li>
+			    <li><a class="dropdown-item" href="#">Category</a></li>
+			  </ul>
+			</div>
+			
+			<div class="dropdown">
+			  <a class="btn dropdown-toggle text-white" href="#" role="button" id="dropdownMenuLink1" data-bs-toggle="dropdown" aria-expanded="false">
+			    Accounts
+			  </a>
+			
+			  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+			    <li><a class="dropdown-item" href="#" th:href="@{/wishlist/list}">Wishlist</a></li>
+			    <li><a class="dropdown-item" href="#" th:href="@{/admin}">Admin</a></li>
+			    <li><a class="dropdown-item" href="#" th:href="@{/user/showFormSignin}">Sign in</a></li>
+			    <li><a class="dropdown-item" href="#" th:href="@{/user/signout}">Sign Out</a></li>
+			  </ul>
+			</div>
+			
+			<div>
+				<a class="text-white " href="#">Orders</a>
+			</div>
+			
+			<div class="d-flex ml-2 ">
+				<div class="p-2 text-white">
+				<a  href="#" th:href="@{/cart/list}">	
+					<span style="color:#FFB62C" id="num">0</span>
+					<img  class="rounded-circle text-white" th:src="@{/images/panier.png}" style="width:20px">
+				</a>
+				</div>
+			</div>
+		 
+		</nav>	
+		
+</div>		
+		

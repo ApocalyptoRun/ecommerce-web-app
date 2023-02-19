@@ -1,0 +1,59 @@
+
+
+.bx{
+	background-color: #FEC752;
+}
+
+.box{
+	margin-left: 320px;
+}
+
+.box a{
+	color: #343A40;
+	font-size : 20px;
+	font-family : sans-serif;
+}
+
+.box a:hover{
+	color: #FEC752;
+  
+}
+
+
+.box a:active{
+	font-weight : bold;
+}
+
+.box a:visited{
+	
+}
+
+.nav-item{
+	margin-left: 16px;
+}
+
+.nav-bar{
+	margin-left: 100px;
+}
+
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.card{
+	margin:30px;
+	width: 19rem;
+}
+
+.add{
+	 margin-left: 890px;
+}
+
+.card-body a:hover{
+	color : #FEC752;
+}
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<title>Insert title here</title>
+<link th:href="@{/styles/home.css}" rel="stylesheet" />
+</head>
+		<body>
+				<div th:replace="navbar :: navbar" ></div>
+				
+				<div class="row bx" style="max-width:100vw">					
+					<img style="margin-left:555px" th:src="@{/images/model.jpg}" alt="image">	   
+				</div>
+				
+				<div class="row box">
+						<nav class="navbar navbar-expand-lg">
+						  <div class="collapse navbar-collapse" id="navbarNav">
+						    <ul class="navbar-nav ">
+						      <li class="nav-item ">
+						        <a class="nav-link" href="#" th:href="@{/product/ByCategory/{id}(id=${59})}">SHOES</a>
+						        
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link" href="#" th:href="@{/test/{id}(id=${60})}">FASHION</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link" href="#" th:href="@{/product/ByCategory/{id}(id=${64})}">CLOTHES</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link " href="#" th:href="@{/test/{id}(id=${62})}">SPORT</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link " href="#" th:href="@{/test/{id}(id=${61})}">ELECTRONICS</a>
+						      </li>
+						      <li class="nav-item">
+						        <a class="nav-link " href="#" th:href="@{/test/{id}(id=${63})}">IPHONE</a>
+						      </li>
+						    </ul>
+						  </div>
+						</nav>
+				</div>
+				
+				<div class="container">
+					<div class="row">
+						<div class="card" th:each="productDto : ${productDtos}">
+							  <div>
+							  	  <img  style="height:200px" class="card-img-top" th:src="@{${'/images/'+productDto.imageURL+'.jpg'}}" alt="image">
+							  </div>
+							  <div class="card-body">
+	 							  <a href="#" th:href="@{/product/showProduct/{id}(id=${productDto.id})}" class="text-dark" style="text-decoration: none;"><h5 class="card-title" th:text="${productDto.name}"></h5></a>
+						   	      <h6 class="card-subtitle mb-2 text-danger" th:text="${productDto.price + ' $'}"></h6>
+						   	      <p class="card-text" th:text="${productDto.description}"></p>
+						     </div>
+					    </div>
+				     </div>	
+			   </div>	
+				
+				
+				
+			 <div th:replace="footer :: footer" ></div>
+			   
+				 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>		
+		</body>
+</html>

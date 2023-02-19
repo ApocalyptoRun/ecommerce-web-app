@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta charset="utf-8">
+<title>Admin</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center pt-3">
+           <h2 class="text-warning">H<sup>2</sup>I<sup>2</sup></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 justify-content-center d-flex flex-row pt-5">
+        <div class="flex-item border">
+          <h2 class="pt-4 pl-5 ml-5	">Create Account</h2>
+          
+	          <form action="#" class="pt-4 pl-4 pr-4" th:action="@{/user/signup}" method="post" th:object="${signupDto}">
+	            <div class="form-group">
+	              <label>Email</label>
+	              <input type="email" class="form-control" th:field="*{email}" required/>
+	            </div>
+	            <div class="form-row">
+	              <div class="col">
+	                <div class="form-group">
+	                  <label>First Name</label>
+	                  <input type="name" class="form-control" th:field="*{firstName}" required/>
+	                </div>
+	              </div>
+	              <div class="col">
+	                <div class="form-group">
+	                  <label>Last Name</label>
+	                  <input type="name" class="form-control" th:field="*{lastName}" required/>
+	                </div>
+	              </div>
+	            </div>
+	            <div class="form-group">
+	              <label>Password</label>
+	              <input type="password" class="form-control" th:field="*{password}" required/>
+	            </div>
+	            <!--  <div class="form-group">
+	              <label>Confirm Password</label>
+	              <input type="password" class="form-control" required
+	              />
+	            </div>-->
+	            <button type="submit" class="btn btn-primary mt-2 py-0">
+	              Create Account
+	            </button>
+	          </form>
+          
+          <hr />
+          <small class="form-text text-muted pt-2 pl-4 text-center">Already Have an Account?</small>
+         
+          <p class="text-center">
+            <a class="text-dark" th:href="@{/user/showFormSignin}"><u>Signin Here</u></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>		
+</body>
+</html>	
